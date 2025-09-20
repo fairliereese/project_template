@@ -16,7 +16,7 @@ cookiecutter project_template \
   project_name='test_cookiecutter' # hopefully this comb. of args will only fill in project name for now
 ``` -->
 
-I will now try with user: {{cookiecutter.user}} in the replacement LOL
+I will now try with user: \{\{cookiecutter.user\}\} in the replacement LOL
 ```bash
 cookiecutter project_template --no-input
 ```
@@ -24,6 +24,34 @@ cookiecutter project_template --no-input
 I am now going to try doing this iteratively. I want to run one cookie cutter just with the project_template module, then one with differnt values for each user
 
 ```bash
+cd /Users/fairliereese/Documents/programming/mele_lab/dev/
 git clone git@github.com:fairliereese/project_template.git
 cookiecutter project_template --no-input project_name=test_cookiecutter
+# cookiecutter gh:fairliereese/project_template --no_input project_name=test_cookiecutter # should be equivalent but we'll use the other strat for now bc of 1. branches and 2. eventual better control over submodule treadment
+```
+
+Now, from the template user "submoduel" (not one yet oficialy)
+```bash
+project_name=test_cookiecutter
+user=test_user
+
+cd /Users/fairliereese/Documents/programming/mele_lab/dev/
+git clone git@github.com:fairliereese/project_template.git
+cookiecutter project_template --no-input project_name=$project_name
+
+cd /Users/fairliereese/Documents/programming/mele_lab/dev/
+git clone git@github.com:fairliereese/template_user.git
+cookiecutter /Users/fairliereese/Documents/programming/mele_lab/dev/template_user \
+  --no-input \
+  project_name=$user \
+  project_name_parent=$project_name \
+  user=$user
+
+```
+
+
+Ok now maybe we should try all together, but with no submodules still
+```bash
+set -x
+cd /Users/fairliereese/Documents/programming/mele_lab/dev/test/
 ```
