@@ -52,7 +52,7 @@ cookiecutter /Users/fairliereese/Documents/programming/mele_lab/dev/template_use
 
 Ok now maybe we should try all together, but with no submodules still
 ```bash
-set -x
+set -xe
 
 project_name=test_cookiecutter
 user=test_user
@@ -74,7 +74,6 @@ cookiecutter template_user \
   project_name_parent=$project_name \
   user=$user
 
-cd ../../
-pip install -e . 
-
+cd ../
+pip install -e .
 ```
