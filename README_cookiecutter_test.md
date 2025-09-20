@@ -77,3 +77,12 @@ cookiecutter template_user \
 cd ../
 pip install -e .
 ```
+
+Okay, now I'm gonna try to get the import to work but w/ R
+I found about this library in R called here() which finds the project root by looking
+for .git / DESCRIPTION / .Rproj files in the project root, so this *should* do the trick
+
+```R
+install.packages('here')
+library(here)
+```
