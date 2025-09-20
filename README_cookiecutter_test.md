@@ -53,5 +53,28 @@ cookiecutter /Users/fairliereese/Documents/programming/mele_lab/dev/template_use
 Ok now maybe we should try all together, but with no submodules still
 ```bash
 set -x
+
+project_name=test_cookiecutter
+user=test_user
+
 cd /Users/fairliereese/Documents/programming/mele_lab/dev/test/
+
+git clone git@github.com:fairliereese/project_template.git
+
+cookiecutter project_template \
+  --no-input \
+  project_name=$project_name
+
+cd $project_name/$project_name  
+
+git clone git@github.com:fairliereese/template_user.git
+cookiecutter template_user \
+  --no-input \
+  project_name=$user \
+  project_name_parent=$project_name \
+  user=$user
+
+cd ../../
+pip install -e . 
+
 ```
