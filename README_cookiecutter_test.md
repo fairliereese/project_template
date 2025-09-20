@@ -20,3 +20,9 @@ I will now try with user: {{cookiecutter.user}} in the replacement LOL
 ```bash
 cookiecutter project_template --no-input
 ```
+
+I am now going to try doing this iteratively. I want to run one cookie cutter just with the project_template module, then one with differnt values for each user
+
+```bash
+git clone 
+```
