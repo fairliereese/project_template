@@ -52,7 +52,7 @@ cookiecutter /Users/fairliereese/Documents/programming/mele_lab/dev/template_use
 
 Ok now maybe we should try all together, but with no submodules still
 ```bash
-set -xe
+set -e
 
 project_name=test_cookiecutter
 user=test_user
