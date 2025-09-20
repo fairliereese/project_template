@@ -24,5 +24,6 @@ cookiecutter project_template --no-input
 I am now going to try doing this iteratively. I want to run one cookie cutter just with the project_template module, then one with differnt values for each user
 
 ```bash
-git clone 
+git clone git@github.com:fairliereese/project_template.git
+cookiecutter project_template --no-input project_name=test_cookiecutter
 ```
