@@ -147,7 +147,7 @@ def get_path_map(mn5_config=False):
     Return dictionary of strings to be replaced if username is recognized, otherwise
     use relative paths
     """
-    
+
     username = getpass.getuser()
 
     # if for just updating mn5 config
